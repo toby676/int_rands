@@ -1,19 +1,17 @@
 import React from 'react';
 import './App.css';
-import Player1Sub from './Player1Sub';
-import Player1Pub from './Player1Pub';
-import Player2Sub from './Player2Sub';
-import Player2Pub from './Player2Pub';
+import Player1Sub from './PlayerSub';
+import Player1Pub from './PlayerPub';
 
 function App() {
   return (
        <div className="App">
         <h3> Hit the publish button to see how many times you've published!</h3>
-        <Player1Sub />
-        <Player1Pub />
+        <Player1Sub channel='Channel1' />
+        <Player1Pub channel='Channel1'/>
 
-        <Player2Sub />
-        <Player2Pub />
+        <Player1Sub channel='Channel2'/>
+        <Player1Pub channel='Channel2'/>
       </div>
   );
 }
