@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap';
 import PubNub from 'pubnub'
 export default function PlayerPub(props){
     const [team, setTeam] = useState('Australia')
@@ -20,19 +21,19 @@ export default function PlayerPub(props){
     })
     return(
         <div>
-        <button onClick={() => {
+        <Button variant="primary" onClick={() => {
             if (count >= 5) return
             setCount(count + 1)
             setTeam(countries[Math.floor(Math.random() * countries.length)])
         }}>
             Select a team!
-        </button>
-        <button onClick={() => {
+        </Button>
+        <Button variant='secondary'onClick={() => {
             setCount(0)
             setTeam('Australia')
         }}>
             Reset!
-        </button>
+        </Button>
         </div>
     )
 }
