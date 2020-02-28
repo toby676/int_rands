@@ -21,6 +21,7 @@ export default function PlayerSub(props){
     })
     return(
         <h1>
+            {props.name} <p/>
             {response}
         </h1>
     )
