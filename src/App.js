@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }from 'react';
 import './App.css';
 import { Container, Col, Row } from 'react-bootstrap';
 import PlayerSub from './PlayerSub';
@@ -37,15 +37,22 @@ function Home() {
 }
 
 function PlayButton(props) {
-  let id = props.id
-  let url = "/play/" + id
+  const [url, setUrl] = useState("")
 
   return (
     <div>
       <Container>
         <Row>
           <Col>
-            <Link to={url} >Play</Link>
+            <input
+              type="text"
+              placeholder="Enter lobby id here..."
+              value={ url }
+              onChange={(e) => {
+                setUrl(e.target.value)
+              }}
+            />
+            <Link to={"/play/" + url} variant="primary" >Play</Link>
           </Col>
         </Row>
       </Container>
