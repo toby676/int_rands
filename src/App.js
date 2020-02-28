@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Player1Sub from './Player1Sub';
+import Player1Pub from './Player1Pub';
+import Player2Sub from './Player2Sub';
+import Player2Pub from './Player2Pub';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+       <div className="App">
+        <h3> Hit the publish button to see how many times you've published!</h3>
+        <Player1Sub />
+        <Player1Pub />
+
+        <Player2Sub />
+        <Player2Pub />
+      </div>
   );
 }
 
