@@ -11,7 +11,7 @@ export default function PlayerPub(props){
     })
     useEffect(() => {
         var publishConfig = {
-            channel : props.channel,
+            channel : props.channel + props.id,
             message: {
                 text: `Attempt ${count}, You are team: ${team}!`,
             }

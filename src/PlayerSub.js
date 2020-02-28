@@ -16,7 +16,7 @@ export default function PlayerSub(props){
             }
         })
         pubnub.subscribe({
-            channels: [props.channel]
+            channels: [props.channel + props.id]
         });
     })
     return(
