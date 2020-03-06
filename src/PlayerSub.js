@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PubNub from 'pubnub'
 export default function PlayerSub(props){
-    const [response, setResponse] = useState("Pick a team!")
+    const [response, setResponse] = useState("Attempt 0, You are team: \n Australia!")
     var pubnub = new PubNub({
         subscribeKey: process.env.REACT_APP_SUB_KEY,
     })

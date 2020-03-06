@@ -3,6 +3,7 @@ import './App.css';
 import PlayButton from './PlayButton'
 import Play from './Play'
 import HomeLink from './HomeLink'
+import ShareBox from './ShareBox'
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,15 +17,18 @@ function App() {
         <h3> Fifa International Randoms</h3>
         <Switch>
           <Route exact path="/">
+            <br />
             <PlayButton />
           </Route>
           <Route exact path="/play/:id">
-            <Play />
             <HomeLink />
+            <Play />
+            <br />
+            <ShareBox />
           </Route>
           <Route exact path="/play">
-            <p>You didnt enter a lobby ID</p>
-            <HomeLink />
+            <p>You didn't enter a lobby ID</p>
+            <PlayButton />
           </Route>
         </Switch>
       </div>

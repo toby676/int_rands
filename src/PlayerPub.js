@@ -13,7 +13,7 @@ export default function PlayerPub(props){
         var publishConfig = {
             channel : props.channel + props.id,
             message: {
-                text: `Attempt ${count}, You are team: ${team}!`,
+                text: `Attempt ${count}, You are team: \n${team}!`,
             }
         }
         pubnub.publish(publishConfig, function(status, response) {
