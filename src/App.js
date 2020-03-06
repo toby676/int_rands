@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import PlayButton from './PlayButton'
 import Play from './Play'
+import HomeLink from './HomeLink'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -20,11 +20,11 @@ function App() {
           </Route>
           <Route exact path="/play/:id">
             <Play />
-            <Link to="/">Home</Link>
+            <HomeLink />
           </Route>
           <Route exact path="/play">
             <p>You didnt enter a lobby ID</p>
-            <Link to="/">Home</Link>
+            <HomeLink />
           </Route>
         </Switch>
       </div>
