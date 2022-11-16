@@ -4,7 +4,7 @@ import PubNub from 'pubnub'
 export default function PlayerPub(props){
     const [team, setTeam] = useState('Australia')
     const [count, setCount] = useState(0)
-    const countries = ['Argentina', 'Australia', 'Austria', 'Belgium', 'Bolivia', 'Brazil', 'Bulgaria', 'Cameroon', 'Canada', 'Chile', 'China PR', 'Colombia', 'Côte d\'Ivoire', 'Czech Republic', 'Denmark', 'Ecuador', 'Egypt', 'England', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'India', 'Ireland', 'Italy', 'Mexico', 'Netherlands', 'New Zealand', 'Northern Ireland', 'Norway', 'Paraguay', 'Peru', 'Poland', 'Portugal', 'Romania', 'Russia', 'Scotland', 'Slovenia', 'South Africa', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'United States', 'Uruguay', 'Venezuela', 'Wales']
+    const countries = ['France', 'Germany', 'England', 'Portugal', 'Italy', 'Spain', 'Argentina', 'Belgium', 'Netherlands', 'Brazil', 'Croatia', 'Denmark', 'Austria', 'Czech Republic', 'Poland', 'Morocco', 'Mexico', 'Sweden', 'Ukraine', 'Scotland', 'Norway', 'USA', 'Wales', 'Ghana', 'Canada', 'Hungary', 'Republic of Ireland', 'Romania', 'Australia', 'Finland', 'Qatar', 'Iceland', 'Northern Ireland', 'New Zealand', 'China']
     var pubnub = new PubNub({
         publishKey: process.env.REACT_APP_PUB_KEY,
         subscribeKey: process.env.REACT_APP_SUB_KEY
