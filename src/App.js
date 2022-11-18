@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
        <div className="App">
-        <h3> Fifa International Randoms</h3>
+        <h3>Fifa International Randoms</h3>
         <Switch>
           <Route exact path="/">
             <br />

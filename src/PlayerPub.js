@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap';
 import PubNub from 'pubnub'
+import countryData from './countries.json'
 export default function PlayerPub(props){
     const [team, setTeam] = useState('Australia')
     const [count, setCount] = useState(0)
-    const countries = ['France', 'Germany', 'England', 'Portugal', 'Italy', 'Spain', 'Argentina', 'Belgium', 'Netherlands', 'Brazil', 'Croatia', 'Denmark', 'Austria', 'Czech Republic', 'Poland', 'Morocco', 'Mexico', 'Sweden', 'Ukraine', 'Scotland', 'Norway', 'USA', 'Wales', 'Ghana', 'Canada', 'Hungary', 'Republic of Ireland', 'Romania', 'Australia', 'Finland', 'Qatar', 'Iceland', 'Northern Ireland', 'New Zealand', 'China']
+    const countries = countryData
     var pubnub = new PubNub({
         publishKey: process.env.REACT_APP_PUB_KEY,
         subscribeKey: process.env.REACT_APP_SUB_KEY
