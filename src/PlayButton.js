@@ -1,24 +1,17 @@
 import { Container, Col, Row } from 'react-bootstrap';
-import React, { useState }from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function PlayButton(props) {
-  const [url, setUrl] = useState("")
+  const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+  let url = genRanHex(32)
 
   return (
     <div>
       <Container>
         <Row>
           <Col>
-            <input
-              type="text"
-              placeholder="Enter lobby ID here..."
-              value={ url }
-              onChange={(e) => {
-                setUrl(e.target.value)
-              }}
-            />
-            <Link to={"/" + props.path + "/" + url}>Lets GO!</Link>
+            <Link to={"/" + props.path + "/" + url}>Create Lobby</Link>
           </Col>
         </Row>
       </Container>

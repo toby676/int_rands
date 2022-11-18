@@ -38,21 +38,21 @@ function App() {
         <br/>
         <h5>World Cup</h5>
         <Switch>
-            <Route exact path="/">
-                <br />
-                <PlayButton path="play_world_cup"/>
-            </Route>
-            <Route exact path="/play_world_cup/:id">
-                <HomeLink />
-                <PlayWorldCup />
-                <br />
-                <ShareBox />
-            </Route>
-            <Route exact path="/play_world_cup">
-                <p>You didn't enter a lobby ID</p>
-                <PlayButton path="play_world_cup"/>
-            </Route>
-        </Switch>
+          <Route exact path="/">
+            <br />
+            <PlayButton path="play_world_cup"/>
+          </Route>
+          <Route exact path="/play_world_cup/:id">
+            <HomeLink />
+            <PlayWorldCup />
+            <br />
+            <ShareBox />
+          </Route>
+          <Route exact path="/play_world_cup">
+            <p>You didn't enter a lobby ID</p>
+            <PlayButton path="play_world_cup"/>
+          </Route>
+      </Switch>
       </div>
     </Router>
   );
