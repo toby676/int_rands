@@ -3,10 +3,10 @@ import PubNub from 'pubnub'
 
 export default function PlayerSub(props) {
   const [response, setResponse] = useState("Click Select a match below!")
-  var pubnub = new PubNub({
-    subscribeKey: process.env.REACT_APP_SUB_KEY,
-  })
   useEffect(() => {
+    const pubnub = new PubNub({
+      subscribeKey: process.env.REACT_APP_SUB_KEY,
+    })
     const listener = {
       status: function (statusEvent) {
         if (statusEvent.category === "PNConnectedCategory") {
@@ -24,7 +24,7 @@ export default function PlayerSub(props) {
       pubnub.removeListener(listener)
       pubnub.unsubscribeAll()
     }
-  }, [])
+  }, [props.channel, props.id])
   return (
     <h1>
       {response}
