@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import PubNub from 'pubnub'
+import { usePubNub } from 'pubnub-react';
 
 export default function PlayerSub(props) {
   const [response, setResponse] = useState("Click Select a match below!")
+  const pubnub = usePubNub();
   useEffect(() => {
-    const pubnub = new PubNub({
-      subscribeKey: process.env.REACT_APP_SUB_KEY,
-    })
     const listener = {
       status: function (statusEvent) {
         if (statusEvent.category === "PNConnectedCategory") {
