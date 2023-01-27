@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import PubNub from 'pubnub'
+import { usePubNub } from 'pubnub-react';
 
 export default function PlayerSub(props) {
   const [response, setResponse] = useState("Attempt 0, You are team: \n Australia!")
-  var pubnub = new PubNub({
-    subscribeKey: process.env.REACT_APP_SUB_KEY,
-  })
+  const pubnub = usePubNub();
   useEffect(() => {
     const listener = {
       status: function (statusEvent) {
@@ -24,7 +22,7 @@ export default function PlayerSub(props) {
       pubnub.removeListener(listener)
       pubnub.unsubscribeAll()
     }
-  }, [])
+  }, [props.channel, props.id, pubnub])
   return (
     <h1>
       {props.name} <p/>

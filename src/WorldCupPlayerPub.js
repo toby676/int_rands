@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap';
-import PubNub from 'pubnub'
+import { usePubNub } from 'pubnub-react';
 export default function PlayerPub(props){
     const [match, setMatch] = useState('Decide who is home or away before selecting a match below')
-    var pubnub = new PubNub({
-        publishKey: process.env.REACT_APP_PUB_KEY,
-        subscribeKey: process.env.REACT_APP_SUB_KEY
-    })
+    const pubnub = usePubNub();
     useEffect(() => {
         var publishConfig = {
             channel : props.channel + props.id,
@@ -16,7 +13,7 @@ export default function PlayerPub(props){
         }
         pubnub.publish(publishConfig, function(status, response) {
         })
-    })
+    }, [match, props.channel, props.id, pubnub])
     return(
         <div>
         <Button variant="primary" onClick={() => {

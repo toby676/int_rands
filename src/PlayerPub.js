@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap';
-import PubNub from 'pubnub'
+import { usePubNub } from 'pubnub-react';
 import countryData from './countries.json'
 export default function PlayerPub(props){
     const [team, setTeam] = useState('Australia')
     const [count, setCount] = useState(0)
     const countries = countryData
-    var pubnub = new PubNub({
-        publishKey: process.env.REACT_APP_PUB_KEY,
-        subscribeKey: process.env.REACT_APP_SUB_KEY
-    })
+    const pubnub = usePubNub();
     useEffect(() => {
         var publishConfig = {
             channel : props.channel + props.id,
@@ -19,7 +16,7 @@ export default function PlayerPub(props){
         }
         pubnub.publish(publishConfig, function(status, response) {
         })
-    })
+    }, [count, props.channel, props.id, pubnub, team])
     return(
         <div>
         <Button variant="primary" onClick={() => {

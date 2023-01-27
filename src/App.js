@@ -1,4 +1,6 @@
 import React from 'react';
+import PubNub from 'pubnub';
+import { PubNubProvider } from 'pubnub-react';
 import './App.css';
 import PlayButton from './PlayButton'
 import Play from './Play'
@@ -11,9 +13,14 @@ import {
   Route
 } from "react-router-dom";
 
+const pubnub = new PubNub({
+  publishKey: process.env.REACT_APP_PUB_KEY,
+  subscribeKey: process.env.REACT_APP_SUB_KEY
+});
 function App() {
   return (
-    <Router>
+    <PubNubProvider client={pubnub}>
+      <Router>
       <div className="App">
         <h3>Fifa International Randoms</h3>
         <br/>
@@ -55,6 +62,7 @@ function App() {
       </Switch>
       </div>
     </Router>
+    </PubNubProvider>
   );
 }
 
