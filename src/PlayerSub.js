@@ -22,7 +22,7 @@ export default function PlayerSub(props) {
       pubnub.removeListener(listener)
       pubnub.unsubscribeAll()
     }
-  }, [props.channel, props.id])
+  }, [props.channel, props.id, pubnub])
   return (
     <h1>
       {props.name} <p/>

@@ -13,7 +13,7 @@ export default function PlayerPub(props){
         }
         pubnub.publish(publishConfig, function(status, response) {
         })
-    })
+    }, [match, props.channel, props.id, pubnub])
     return(
         <div>
         <Button variant="primary" onClick={() => {
